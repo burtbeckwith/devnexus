@@ -5,14 +5,21 @@ netty:
   default:
     allocator:
       max-order: 3
+#datasources:
+#  default:
+#    url: jdbc:h2:mem:devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+#    driverClassName: org.h2.Driver
+#    username: sa
+#    password: ''
+#    schema-generate: CREATE
+#    dialect: H2
 datasources:
   default:
-    url: jdbc:h2:mem:devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
-    driverClassName: org.h2.Driver
-    username: sa
-    password: ''
-    schema-generate: CREATE
-    dialect: H2
+    url: ${JDBC_URL:`jdbc:mysql://localhost:3306/db`}
+    username: ${JDBC_USER:root}
+    password: ${JDBC_PASSWORD:}
+    driverClassName: com.mysql.cj.jdbc.Driver
+    dialect: MYSQL
 flyway:
   datasources:
     default:

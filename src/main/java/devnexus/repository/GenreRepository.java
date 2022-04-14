@@ -10,9 +10,9 @@ import io.micronaut.data.repository.PageableRepository;
 import javax.transaction.Transactional;
 import javax.validation.constraints.NotBlank;
 
-import static io.micronaut.data.model.query.builder.sql.Dialect.H2;
+import static io.micronaut.data.model.query.builder.sql.Dialect.MYSQL;
 
-@JdbcRepository(dialect = H2)
+@JdbcRepository(dialect = MYSQL)
 public interface GenreRepository extends PageableRepository<Genre, Long> {
 
     Genre save(@NonNull @NotBlank String name);

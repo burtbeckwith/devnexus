@@ -23,10 +23,12 @@ dependencies {
     annotationProcessor("io.micronaut.data:micronaut-data-processor")
     implementation("io.micronaut.data:micronaut-data-jdbc")
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
-    runtimeOnly("com.h2database:h2")
+//    runtimeOnly("com.h2database:h2")
 
     implementation("io.micronaut.flyway:micronaut-flyway")
     runtimeOnly("org.flywaydb:flyway-mysql")
+
+    runtimeOnly("mysql:mysql-connector-java")
 }
 
 application {
