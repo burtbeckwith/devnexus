@@ -14,6 +14,7 @@ import io.micronaut.http.annotation.Put;
 import io.micronaut.http.annotation.Status;
 import io.micronaut.scheduling.TaskExecutors;
 import io.micronaut.scheduling.annotation.ExecuteOn;
+import io.micronaut.security.annotation.Secured;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
@@ -23,7 +24,9 @@ import java.util.Optional;
 
 import static io.micronaut.http.HttpHeaders.LOCATION;
 import static io.micronaut.http.HttpStatus.NO_CONTENT;
+import static io.micronaut.security.rules.SecurityRule.IS_ANONYMOUS;
 
+@Secured(IS_ANONYMOUS)
 @ExecuteOn(TaskExecutors.IO)
 @Controller("/genres")
 class GenreController {

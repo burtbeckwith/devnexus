@@ -1,6 +1,11 @@
 micronaut:
   application:
     name: devnexus
+  security:
+    authentication: session
+    redirect:
+      login-success: /
+      login-failure: /login/authFailed
 netty:
   default:
     allocator:

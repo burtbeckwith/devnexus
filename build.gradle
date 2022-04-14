@@ -29,6 +29,15 @@ dependencies {
     runtimeOnly("org.flywaydb:flyway-mysql")
 
     runtimeOnly("mysql:mysql-connector-java")
+
+    annotationProcessor("io.micronaut.security:micronaut-security-annotations")
+    implementation("io.micronaut.reactor:micronaut-reactor")
+    implementation("io.micronaut.reactor:micronaut-reactor-http-client")
+    implementation("io.micronaut.security:micronaut-security-session")
+    implementation("io.micronaut.views:micronaut-views-velocity")
+
+    implementation("org.springframework.security:spring-security-crypto:5.6.2")
+    runtimeOnly("org.slf4j:jcl-over-slf4j:1.7.36")
 }
 
 application {
