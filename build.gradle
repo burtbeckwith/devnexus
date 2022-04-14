@@ -20,16 +20,17 @@ dependencies {
 
 }
 
-
 application {
     mainClass.set("devnexus.Application")
 }
+
 java {
     sourceCompatibility = JavaVersion.toVersion("1.8")
     targetCompatibility = JavaVersion.toVersion("1.8")
 }
 
 graalvmNative.toolchainDetection = false
+
 micronaut {
     runtime("netty")
     testRuntime("junit5")
@@ -38,5 +39,3 @@ micronaut {
         annotations("devnexus.*")
     }
 }
-
-
